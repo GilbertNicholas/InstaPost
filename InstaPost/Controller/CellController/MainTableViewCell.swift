@@ -14,9 +14,9 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var postOwnerName: UILabel!
 
     func configureUI(postData: Post, userData: User) {
-        postTitle.text = postData.title
-        postBody.text = postData.body
-        postCompanyOwner.text = userData.company.name
-        postOwnerName.text = userData.name
+        self.postTitle.text = postData.title
+        self.postBody.text = postData.body
+        self.postCompanyOwner.text = userData.company.name
+        self.postOwnerName.text = userData.name
     }
 }

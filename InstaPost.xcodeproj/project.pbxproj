@@ -30,6 +30,9 @@
 		02D7FD8227265DA4004D56C3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7FD8127265DA4004D56C3 /* Photo.swift */; };
 		02D7FD8527265E8B004D56C3 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7FD8327265E8B004D56C3 /* PhotoCell.swift */; };
 		02D7FD8627265E8B004D56C3 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D7FD8427265E8B004D56C3 /* PhotoCell.xib */; };
+		02D7FDB42726E23D004D56C3 /* PerformPushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7FDB32726E23D004D56C3 /* PerformPushController.swift */; };
+		02D7FDB62726E384004D56C3 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7FDB52726E384004D56C3 /* PhotoDetailViewController.swift */; };
+		02D7FDB82726E393004D56C3 /* PhotoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D7FDB72726E393004D56C3 /* PhotoDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		02D7FD8127265DA4004D56C3 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		02D7FD8327265E8B004D56C3 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		02D7FD8427265E8B004D56C3 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		02D7FDB32726E23D004D56C3 /* PerformPushController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformPushController.swift; sourceTree = "<group>"; };
+		02D7FDB52726E384004D56C3 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		02D7FDB72726E393004D56C3 /* PhotoDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoDetail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				028127A8272339C6009320FE /* Model */,
-				028127AB272339EE009320FE /* Cell Controller */,
 				028127AA272339D7009320FE /* Controller */,
 				028127A9272339D2009320FE /* View */,
-				028127AC272348D2009320FE /* Service */,
+				028127AC272348D2009320FE /* Utils */,
 				028127852722F8F6009320FE /* AppDelegate.swift */,
 				028127872722F8F6009320FE /* SceneDelegate.swift */,
 				0281278E2722F8F9009320FE /* Assets.xcassets */,
@@ -119,12 +124,8 @@
 		028127A9272339D2009320FE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0281278B2722F8F6009320FE /* Main.storyboard */,
-				02D7FD77272576C8004D56C3 /* PostDetail.storyboard */,
-				028127A2272335FB009320FE /* UserDetail.storyboard */,
-				02D7FD7427256D51004D56C3 /* CommentCell.xib */,
-				02D7FD7C2725C9CC004D56C3 /* AlbumCell.xib */,
-				02D7FD8427265E8B004D56C3 /* PhotoCell.xib */,
+				02D7FDB927270FCF004D56C3 /* MainView */,
+				02D7FDBA27270FE5004D56C3 /* CellView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,14 +133,59 @@
 		028127AA272339D7009320FE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				028127892722F8F6009320FE /* MainViewController.swift */,
-				028127A627233653009320FE /* PostDetailViewController.swift */,
-				02D7FD792725B675004D56C3 /* UserDetailViewController.swift */,
+				02D7FDBC27271057004D56C3 /* ViewController */,
+				02D7FDBB27271045004D56C3 /* CellController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		028127AB272339EE009320FE /* Cell Controller */ = {
+		028127AC272348D2009320FE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				02D7FDB22726E1FC004D56C3 /* Protocol */,
+				02D7FDB12726E1DB004D56C3 /* APIService */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		02D7FDB12726E1DB004D56C3 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				02D7FD692723D7A8004D56C3 /* APIService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		02D7FDB22726E1FC004D56C3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				02D7FDB32726E23D004D56C3 /* PerformPushController.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		02D7FDB927270FCF004D56C3 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				0281278B2722F8F6009320FE /* Main.storyboard */,
+				02D7FD77272576C8004D56C3 /* PostDetail.storyboard */,
+				028127A2272335FB009320FE /* UserDetail.storyboard */,
+				02D7FDB72726E393004D56C3 /* PhotoDetail.storyboard */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		02D7FDBA27270FE5004D56C3 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				02D7FD8427265E8B004D56C3 /* PhotoCell.xib */,
+				02D7FD7C2725C9CC004D56C3 /* AlbumCell.xib */,
+				02D7FD7427256D51004D56C3 /* CommentCell.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		02D7FDBB27271045004D56C3 /* CellController */ = {
 			isa = PBXGroup;
 			children = (
 				0281279B27232827009320FE /* MainTableViewCell.swift */,
@@ -147,15 +193,18 @@
 				02D7FD7B2725C9CC004D56C3 /* AlbumCell.swift */,
 				02D7FD8327265E8B004D56C3 /* PhotoCell.swift */,
 			);
-			path = "Cell Controller";
+			path = CellController;
 			sourceTree = "<group>";
 		};
-		028127AC272348D2009320FE /* Service */ = {
+		02D7FDBC27271057004D56C3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				02D7FD692723D7A8004D56C3 /* APIService.swift */,
+				028127892722F8F6009320FE /* MainViewController.swift */,
+				028127A627233653009320FE /* PostDetailViewController.swift */,
+				02D7FD792725B675004D56C3 /* UserDetailViewController.swift */,
+				02D7FDB52726E384004D56C3 /* PhotoDetailViewController.swift */,
 			);
-			path = Service;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02D7FD8627265E8B004D56C3 /* PhotoCell.xib in Resources */,
+				02D7FDB82726E393004D56C3 /* PhotoDetail.storyboard in Resources */,
 				028127922722F8F9009320FE /* LaunchScreen.storyboard in Resources */,
 				02D7FD78272576C8004D56C3 /* PostDetail.storyboard in Resources */,
 				028127A3272335FB009320FE /* UserDetail.storyboard in Resources */,
@@ -239,9 +289,11 @@
 				02D7FD8027265D09004D56C3 /* Album.swift in Sources */,
 				0281278A2722F8F6009320FE /* MainViewController.swift in Sources */,
 				028127862722F8F6009320FE /* AppDelegate.swift in Sources */,
+				02D7FDB42726E23D004D56C3 /* PerformPushController.swift in Sources */,
 				02D7FD7527256D51004D56C3 /* CommentCell.swift in Sources */,
 				02D7FD662723D36D004D56C3 /* User.swift in Sources */,
 				028127A727233653009320FE /* PostDetailViewController.swift in Sources */,
+				02D7FDB62726E384004D56C3 /* PhotoDetailViewController.swift in Sources */,
 				02D7FD702725560A004D56C3 /* Comment.swift in Sources */,
 				0281279C27232827009320FE /* MainTableViewCell.swift in Sources */,
 				02D7FD682723D3D4004D56C3 /* Post.swift in Sources */,

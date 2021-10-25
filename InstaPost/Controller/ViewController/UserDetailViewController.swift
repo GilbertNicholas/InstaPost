@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserDetailViewController: UIViewController {
+class UserDetailViewController: UIViewController, PerformPushController {
     
     var user: User?
     private var albums = [Album]()
@@ -44,12 +44,12 @@ class UserDetailViewController: UIViewController {
     private func fetchAlbums() {
         guard let user = self.user else { return }
         apiService.fetchAPI(urlCompletion: "/albums?userId=\(user.id)", linkUrl: .data) { data, resp, err in
-            guard let userByte = data, err == nil else {
+            guard let albumByte = data, err == nil else {
                 return
             }
             
             do {
-                self.albums = try JSONDecoder().decode([Album].self, from: userByte)
+                self.albums = try JSONDecoder().decode([Album].self, from: albumByte)
                 DispatchQueue.main.async {
                     self.albumTableView.reloadData()
                 }
@@ -58,6 +58,14 @@ class UserDetailViewController: UIViewController {
                 return
             }
         }
+    }
+    
+    func callPushController(photo: Photo) {
+        let storyboard = UIStoryboard(name: "PhotoDetail", bundle: nil)
+        let destController = storyboard.instantiateViewController(withIdentifier: "PhotoDetail") as! PhotoDetailViewController
+        destController.photo = photo
+        
+        self.navigationController?.pushViewController(destController, animated: true)
     }
 }
 
@@ -71,6 +79,7 @@ extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumCell", for: indexPath) as! AlbumCell
             
         cell.configureUI(album: albums[indexPath.row])
+        cell.delegate = self
         albumTableViewHeight.constant = CGFloat(albums.count)*cell.frame.size.height
         
         return cell

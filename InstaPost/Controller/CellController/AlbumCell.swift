@@ -13,22 +13,27 @@ class AlbumCell: UITableViewCell {
     @IBOutlet weak var photosColView: UICollectionView!
     
     var album: Album?
+    var delegate: PerformPushController?
     private var photos = [Photo]()
     private let apiService = APIService()
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        photosColView.register(PhotoCell.nib(), forCellWithReuseIdentifier: "PhotoCell")
-        photosColView.delegate = self
-        photosColView.dataSource = self
+        configureColView()
     }
     
     func configureUI(album: Album) {
         self.album = album
-        albumName.text = album.title
+        self.albumName.text = album.title
         
         fetchPhotos()
+    }
+    
+    func configureColView() {
+        photosColView.register(PhotoCell.nib(), forCellWithReuseIdentifier: "PhotoCell")
+        photosColView.delegate = self
+        photosColView.dataSource = self
     }
     
     static func nib() -> UINib {
@@ -38,12 +43,12 @@ class AlbumCell: UITableViewCell {
     private func fetchPhotos() {
         guard let album = self.album else { return }
         apiService.fetchAPI(urlCompletion: "/photos?albumId=\(album.id)", linkUrl: .data) { data, resp, err in
-            guard let userByte = data, err == nil else {
+            guard let photoByte = data, err == nil else {
                 return
             }
             
             do {
-                self.photos = try JSONDecoder().decode([Photo].self, from: userByte)
+                self.photos = try JSONDecoder().decode([Photo].self, from: photoByte)
                 DispatchQueue.main.async {
                     self.photosColView.reloadData()
                 }
@@ -64,6 +69,7 @@ extension AlbumCell: UICollectionViewDataSource, UICollectionViewDelegate {
         let cell = photosColView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         
         let photoIdx = String(self.photos[indexPath.row].thumbnailUrl.suffix(6))
+        
         apiService.fetchAPI(urlCompletion: "/\(photoIdx)", linkUrl: .photo) { data, resp, err in
             guard let userByte = data, err == nil else {
                 return
@@ -73,7 +79,13 @@ extension AlbumCell: UICollectionViewDataSource, UICollectionViewDelegate {
                 cell.configureUI(photoData: userByte)
             }
         }
-        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = self.photos[indexPath.row]
+        if let del = self.delegate {
+            del.callPushController(photo: photo)
+        }
     }
 }

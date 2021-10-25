@@ -20,7 +20,7 @@
                                 <rect key="frame" x="1" y="45" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-3O-7nT">
-                                        <rect key="frame" x="1" y="1" width="412" height="853"/>
+                                        <rect key="frame" x="1" y="1" width="412" height="703"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFh-lB-tdX">
                                                 <rect key="frame" x="1" y="1" width="410" height="400"/>
@@ -127,10 +127,10 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UEA-fs-S0u">
-                                                <rect key="frame" x="1" y="402" width="410" height="450"/>
+                                                <rect key="frame" x="1" y="402" width="410" height="300"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="450" id="WbF-Sc-an8"/>
+                                                    <constraint firstAttribute="height" constant="300" id="WbF-Sc-an8"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="dataSource" destination="VT5-i5-p1D" id="AB1-uD-TxL"/>

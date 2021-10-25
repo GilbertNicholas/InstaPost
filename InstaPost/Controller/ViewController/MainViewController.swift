@@ -29,7 +29,7 @@ class MainViewController: UITableViewController {
             do {
                 self.posts = try JSONDecoder().decode([Post].self, from: postByte)
                 DispatchQueue.global().async {
-                    self.fetchUserOwner()
+                    self.fetchUser()
                 }
             } catch let error {
                 print("DEBUG: API ERROR \(error.localizedDescription)")
@@ -38,7 +38,7 @@ class MainViewController: UITableViewController {
         }
     }
     
-    private func fetchUserOwner() {
+    private func fetchUser() {
         apiService.fetchAPI(urlCompletion: "/users", linkUrl: .data) { data, resp, err in
             guard let userByte = data, err == nil else {
                 return

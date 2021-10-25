@@ -18,8 +18,8 @@ class CommentCell: UITableViewCell {
     }
     
     func configureUI(comment: Comment) {
-        commentAuthor.text = comment.name
-        commentBody.text = comment.body
+        self.commentAuthor.text = comment.name
+        self.commentBody.text = comment.body
     }
     
     static func nib() -> UINib {
