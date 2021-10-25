@@ -26,15 +26,17 @@ class PostDetailViewController: UIViewController {
     }
     
     private func configureUI() {
-        titlePost.text = post?.title
-        usernamePost.setTitle("By: \(user?.name ?? "")", for: .normal)
-        bodyPost.text = post?.body
+        guard let post = self.post else { return }
+        guard let user = self.user else { return }
+        self.titlePost.text = post.title
+        self.usernamePost.setTitle("By: \(user.name)", for: .normal)
+        self.bodyPost.text = post.body
     }
     
     private func configureTableView() {
-        commentTableView.register(CommentCell.nib(), forCellReuseIdentifier: "CommentCell")
-        commentTableView.delegate = self
-        commentTableView.dataSource = self
+        self.commentTableView.register(CommentCell.nib(), forCellReuseIdentifier: "CommentCell")
+        self.commentTableView.delegate = self
+        self.commentTableView.dataSource = self
     }
     
     private func fetchComments() {

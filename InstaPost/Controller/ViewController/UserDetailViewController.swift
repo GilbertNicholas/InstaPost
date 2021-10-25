@@ -28,16 +28,18 @@ class UserDetailViewController: UIViewController, PerformPushController {
     }
     
     private func configureUI() {
-        userName.text = user?.name
-        userEmail.text = user?.email
-        userCompany.text = user?.company.name
-        userAddress.text = user?.address.street 
+        guard let user = self.user else { return }
+        
+        self.userName.text = user.name
+        self.userEmail.text = user.email
+        self.userCompany.text = user.company.name
+        self.userAddress.text = "\(user.address.street), \(user.address.city)"
     }
     
     private func configureTableView() {
-        albumTableView.register(AlbumCell.nib(), forCellReuseIdentifier: "AlbumCell")
-        albumTableView.delegate = self
-        albumTableView.dataSource = self
+        self.albumTableView.register(AlbumCell.nib(), forCellReuseIdentifier: "AlbumCell")
+        self.albumTableView.delegate = self
+        self.albumTableView.dataSource = self
     }
     
     private func fetchAlbums() {

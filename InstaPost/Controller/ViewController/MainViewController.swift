@@ -14,7 +14,6 @@ class MainViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Menu"
         
         fetchPostsData()
     }

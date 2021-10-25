@@ -40,13 +40,13 @@ class PhotoDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupScrollView() {
-        scrollView.delegate = self
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 5.0
+        self.scrollView.delegate = self
+        self.scrollView.minimumZoomScale = 1.0
+        self.scrollView.maximumZoomScale = 5.0
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        image.center = view.center
+        self.image.center = view.center
         return image
     }
 }

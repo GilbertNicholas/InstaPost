@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Posts-->
         <scene sceneID="a6d-1K-nip">
             <objects>
                 <tableViewController id="neu-v0-1QG" customClass="MainViewController" customModule="InstaPost" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="neu-v0-1QG" id="4id-j0-Ewe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="E1Y-NX-RX6"/>
+                    <navigationItem key="navigationItem" title="Posts" id="E1Y-NX-RX6"/>
                     <connections>
                         <segue destination="HOs-Xq-rcG" kind="show" identifier="postDetailSegue" id="hg6-u2-dAI"/>
                     </connections>

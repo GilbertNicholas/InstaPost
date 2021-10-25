@@ -19,20 +19,19 @@ class AlbumCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        fetchPhotos()
         configureColView()
     }
     
     func configureUI(album: Album) {
         self.album = album
         self.albumName.text = album.title
-        
-        fetchPhotos()
     }
     
     func configureColView() {
-        photosColView.register(PhotoCell.nib(), forCellWithReuseIdentifier: "PhotoCell")
-        photosColView.delegate = self
-        photosColView.dataSource = self
+        self.photosColView.register(PhotoCell.nib(), forCellWithReuseIdentifier: "PhotoCell")
+        self.photosColView.delegate = self
+        self.photosColView.dataSource = self
     }
     
     static func nib() -> UINib {
