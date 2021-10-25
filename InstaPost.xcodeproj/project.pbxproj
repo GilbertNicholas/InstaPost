@@ -100,8 +100,6 @@
 				0281278E2722F8F9009320FE /* Assets.xcassets */,
 				028127902722F8F9009320FE /* LaunchScreen.storyboard */,
 				028127932722F8F9009320FE /* Info.plist */,
-				02D7FD8327265E8B004D56C3 /* PhotoCell.swift */,
-				02D7FD8427265E8B004D56C3 /* PhotoCell.xib */,
 			);
 			path = InstaPost;
 			sourceTree = "<group>";
@@ -126,6 +124,7 @@
 				028127A2272335FB009320FE /* UserDetail.storyboard */,
 				02D7FD7427256D51004D56C3 /* CommentCell.xib */,
 				02D7FD7C2725C9CC004D56C3 /* AlbumCell.xib */,
+				02D7FD8427265E8B004D56C3 /* PhotoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,6 +145,7 @@
 				0281279B27232827009320FE /* MainTableViewCell.swift */,
 				02D7FD7327256D51004D56C3 /* CommentCell.swift */,
 				02D7FD7B2725C9CC004D56C3 /* AlbumCell.swift */,
+				02D7FD8327265E8B004D56C3 /* PhotoCell.swift */,
 			);
 			path = "Cell Controller";
 			sourceTree = "<group>";

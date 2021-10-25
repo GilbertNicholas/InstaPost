@@ -14,8 +14,3 @@ struct Photo: Decodable {
     let url: String
     let thumbnailUrl: String
 }
-
-struct PhotoData {
-    let title: String
-    let image: Data
-}

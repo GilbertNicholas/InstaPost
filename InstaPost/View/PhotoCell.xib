@@ -29,6 +29,9 @@
                 <constraint firstAttribute="bottom" secondItem="sgh-84-Ffl" secondAttribute="bottom" constant="2" id="mU0-43-bro"/>
             </constraints>
             <size key="customSize" width="105" height="97"/>
+            <connections>
+                <outlet property="photo" destination="sgh-84-Ffl" id="Bgz-51-dOn"/>
+            </connections>
             <point key="canvasLocation" x="169.56521739130437" y="101.11607142857143"/>
         </collectionViewCell>
     </objects>

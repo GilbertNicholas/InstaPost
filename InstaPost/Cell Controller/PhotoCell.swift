@@ -16,8 +16,8 @@ class PhotoCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configureUI(photo: Photo) {
-//        self.photo.image = UIImage(data: photo.thumbnailUrl)
+    func configureUI(photoData: Data) {
+        self.photo.image = UIImage(data: photoData)
     }
     
     static func nib() -> UINib {

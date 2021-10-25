@@ -14,7 +14,6 @@ class AlbumCell: UITableViewCell {
     
     var album: Album?
     private var photos = [Photo]()
-    private var photoData = [PhotoData]()
     private let apiService = APIService()
 
     override func awakeFromNib() {
@@ -63,6 +62,17 @@ extension AlbumCell: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = photosColView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
+        
+        let photoIdx = String(self.photos[indexPath.row].thumbnailUrl.suffix(6))
+        apiService.fetchAPI(urlCompletion: "/\(photoIdx)", linkUrl: .photo) { data, resp, err in
+            guard let userByte = data, err == nil else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                cell.configureUI(photoData: userByte)
+            }
+        }
         
         return cell
     }
