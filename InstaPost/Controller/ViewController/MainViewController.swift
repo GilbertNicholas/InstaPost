@@ -11,7 +11,6 @@ class MainViewController: UITableViewController {
     
     var posts = [Post]()
     var users = [User]()
-    private var apiService = APIService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,7 @@ class MainViewController: UITableViewController {
     }
     
     private func fetchPostsData() {
-        apiService.fetchAPI(urlCompletion: "/posts", linkUrl: .data) { data, resp, err in
+        APIService.fetchAPI(urlCompletion: "/posts", linkUrl: .data) { data, resp, err in
             guard let postByte = data, err == nil else {
                 return
             }
@@ -39,7 +38,7 @@ class MainViewController: UITableViewController {
     }
     
     private func fetchUser() {
-        apiService.fetchAPI(urlCompletion: "/users", linkUrl: .data) { data, resp, err in
+        APIService.fetchAPI(urlCompletion: "/users", linkUrl: .data) { data, resp, err in
             guard let userByte = data, err == nil else {
                 return
             }

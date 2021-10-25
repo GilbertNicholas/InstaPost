@@ -15,7 +15,6 @@ class AlbumCell: UITableViewCell {
     var album: Album?
     var delegate: PerformPushController?
     private var photos = [Photo]()
-    private let apiService = APIService()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,7 +41,7 @@ class AlbumCell: UITableViewCell {
     
     private func fetchPhotos() {
         guard let album = self.album else { return }
-        apiService.fetchAPI(urlCompletion: "/photos?albumId=\(album.id)", linkUrl: .data) { data, resp, err in
+        APIService.fetchAPI(urlCompletion: "/photos?albumId=\(album.id)", linkUrl: .data) { data, resp, err in
             guard let photoByte = data, err == nil else {
                 return
             }
@@ -70,7 +69,7 @@ extension AlbumCell: UICollectionViewDataSource, UICollectionViewDelegate {
         
         let photoIdx = String(self.photos[indexPath.row].thumbnailUrl.suffix(6))
         
-        apiService.fetchAPI(urlCompletion: "/\(photoIdx)", linkUrl: .photo) { data, resp, err in
+        APIService.fetchAPI(urlCompletion: "/\(photoIdx)", linkUrl: .photo) { data, resp, err in
             guard let userByte = data, err == nil else {
                 return
             }

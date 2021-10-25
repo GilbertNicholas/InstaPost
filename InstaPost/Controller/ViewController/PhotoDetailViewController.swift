@@ -14,7 +14,6 @@ class PhotoDetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var image: UIImageView!
     
     var photo: Photo?
-    private let apiService = APIService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,7 @@ class PhotoDetailViewController: UIViewController, UIScrollViewDelegate {
         self.photoName.text = photo.title
         
         let photoIdx = String(photo.thumbnailUrl.suffix(6))
-        apiService.fetchAPI(urlCompletion: "/\(photoIdx)", linkUrl: .photo) { data, resp, err in
+        APIService.fetchAPI(urlCompletion: "/\(photoIdx)", linkUrl: .photo) { data, resp, err in
             guard let photoByte = data, err == nil else {
                 return
             }

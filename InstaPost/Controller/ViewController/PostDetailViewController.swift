@@ -12,7 +12,6 @@ class PostDetailViewController: UIViewController {
     var user: User?
     var post: Post?
     private var comments = [Comment]()
-    private var apiService = APIService()
     
     @IBOutlet weak var titlePost: UILabel!
     @IBOutlet weak var usernamePost: UIButton!
@@ -41,7 +40,7 @@ class PostDetailViewController: UIViewController {
     private func fetchComments() {
         guard let id = self.post?.id else { return }
         
-        apiService.fetchAPI(urlCompletion: "/posts/\(id)/comments", linkUrl: .data) { data, resp, err in
+        APIService.fetchAPI(urlCompletion: "/posts/\(id)/comments", linkUrl: .data) { data, resp, err in
             guard let postByte = data, err == nil else {
                 return
             }

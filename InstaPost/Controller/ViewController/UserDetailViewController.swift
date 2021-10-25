@@ -11,7 +11,6 @@ class UserDetailViewController: UIViewController, PerformPushController {
     
     var user: User?
     private var albums = [Album]()
-    private let apiService = APIService()
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
@@ -43,7 +42,7 @@ class UserDetailViewController: UIViewController, PerformPushController {
     
     private func fetchAlbums() {
         guard let user = self.user else { return }
-        apiService.fetchAPI(urlCompletion: "/albums?userId=\(user.id)", linkUrl: .data) { data, resp, err in
+        APIService.fetchAPI(urlCompletion: "/albums?userId=\(user.id)", linkUrl: .data) { data, resp, err in
             guard let albumByte = data, err == nil else {
                 return
             }

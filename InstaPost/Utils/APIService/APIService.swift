@@ -14,7 +14,7 @@ enum urlType: String {
 
 struct APIService {
     
-    func fetchAPI(urlCompletion: String, linkUrl: urlType, onCompletion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    static func fetchAPI(urlCompletion: String, linkUrl: urlType, onCompletion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         let urlString = "\(linkUrl.rawValue)\(urlCompletion)"
         guard let url = URL(string: urlString) else { return }
         
