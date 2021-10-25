@@ -41,7 +41,7 @@ class PostDetailViewController: UIViewController {
     private func fetchComments() {
         guard let id = self.post?.id else { return }
         
-        apiService.fetchAPI(type: "/posts/\(id)/comments") { data, resp, err in
+        apiService.fetchAPI(urlCompletion: "/posts/\(id)/comments", linkUrl: .data) { data, resp, err in
             guard let postByte = data, err == nil else {
                 return
             }

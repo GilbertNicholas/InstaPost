@@ -7,10 +7,15 @@
 
 import Foundation
 
+enum urlType: String {
+    case data = "https://jsonplaceholder.typicode.com"
+    case photo = "https://via.placeholder.com/150"
+}
+
 struct APIService {
     
-    func fetchAPI(type: String, onCompletion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        let urlString = "https://jsonplaceholder.typicode.com\(type)"
+    func fetchAPI(urlCompletion: String, linkUrl: urlType, onCompletion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        let urlString = "\(linkUrl.rawValue)\(urlCompletion)"
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, resp, err) in

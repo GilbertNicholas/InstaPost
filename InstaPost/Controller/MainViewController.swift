@@ -21,7 +21,7 @@ class MainViewController: UITableViewController {
     }
     
     private func fetchPostsData() {
-        apiService.fetchAPI(type: "/posts") { data, resp, err in
+        apiService.fetchAPI(urlCompletion: "/posts", linkUrl: .data) { data, resp, err in
             guard let postByte = data, err == nil else {
                 return
             }
@@ -39,7 +39,7 @@ class MainViewController: UITableViewController {
     }
     
     private func fetchUserOwner() {
-        apiService.fetchAPI(type: "/users") { data, resp, err in
+        apiService.fetchAPI(urlCompletion: "/users", linkUrl: .data) { data, resp, err in
             guard let userByte = data, err == nil else {
                 return
             }
