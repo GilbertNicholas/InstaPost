@@ -46,7 +46,7 @@ class PhotoDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        self.image.center = view.center
+        image.center = view.center
         return image
     }
 }

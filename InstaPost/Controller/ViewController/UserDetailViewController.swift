@@ -16,6 +16,7 @@ class UserDetailViewController: UIViewController, PerformPushController {
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userCompany: UILabel!
     @IBOutlet weak var userAddress: UILabel!
+    @IBOutlet weak var userDetailAddress: UILabel!
     @IBOutlet weak var albumTableView: UITableView!
     @IBOutlet weak var albumTableViewHeight: NSLayoutConstraint!
 
@@ -34,6 +35,7 @@ class UserDetailViewController: UIViewController, PerformPushController {
         self.userEmail.text = user.email
         self.userCompany.text = user.company.name
         self.userAddress.text = "\(user.address.street), \(user.address.city)"
+        self.userDetailAddress.text = "\(user.address.suite) \(user.address.zipcode)"
     }
     
     private func configureTableView() {

@@ -19,13 +19,14 @@ class AlbumCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        fetchPhotos()
         configureColView()
     }
     
     func configureUI(album: Album) {
         self.album = album
         self.albumName.text = album.title
+        
+        fetchPhotos()
     }
     
     func configureColView() {
