@@ -19,7 +19,7 @@ This app using Xcode 13, iOS 15 Target Deployment, and Swift 5 Versions.
 
 
 ## AppStore Testflight!
-Please test the app data correctness fetched from API and the UI functions provided directly from your iPhone <a href=https://testflight.apple.com/join/byjJPuoFs>here</a> 
+Please test the app data correctness fetched from API and the UI functions provided directly from your iPhone <a href=https://testflight.apple.com/join/byjJPuoF>here</a> 
 
 
 ## REST API
