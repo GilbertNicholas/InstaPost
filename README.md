@@ -18,8 +18,8 @@ This is an iOS app that using UIKit as its framework and MVC architecture as its
 This app using Xcode 13, iOS 15 Target Deployment, and Swift 5 Versions.
 
 
-## AppStore Testflight! (Coming soon)
-*Being reviewed by Apple at the moment
+## AppStore Testflight!
+Please test the app data correctness fetched from API and the UI functions provided directly from your iPhone <a href=https://testflight.apple.com/join/byjJPuoFs>here</a> 
 
 
 ## REST API
