@@ -124,7 +124,7 @@
 		028127A9272339D2009320FE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				02D7FDB927270FCF004D56C3 /* MainView */,
+				02D7FDB927270FCF004D56C3 /* PageView */,
 				02D7FDBA27270FE5004D56C3 /* CellView */,
 			);
 			path = View;
@@ -133,7 +133,7 @@
 		028127AA272339D7009320FE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				02D7FDBC27271057004D56C3 /* ViewController */,
+				02D7FDBC27271057004D56C3 /* PageViewController */,
 				02D7FDBB27271045004D56C3 /* CellController */,
 			);
 			path = Controller;
@@ -164,7 +164,7 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		02D7FDB927270FCF004D56C3 /* MainView */ = {
+		02D7FDB927270FCF004D56C3 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
 				0281278B2722F8F6009320FE /* Main.storyboard */,
@@ -172,7 +172,7 @@
 				028127A2272335FB009320FE /* UserDetail.storyboard */,
 				02D7FDB72726E393004D56C3 /* PhotoDetail.storyboard */,
 			);
-			path = MainView;
+			path = PageView;
 			sourceTree = "<group>";
 		};
 		02D7FDBA27270FE5004D56C3 /* CellView */ = {
@@ -196,7 +196,7 @@
 			path = CellController;
 			sourceTree = "<group>";
 		};
-		02D7FDBC27271057004D56C3 /* ViewController */ = {
+		02D7FDBC27271057004D56C3 /* PageViewController */ = {
 			isa = PBXGroup;
 			children = (
 				028127892722F8F6009320FE /* MainViewController.swift */,
@@ -204,7 +204,7 @@
 				02D7FD792725B675004D56C3 /* UserDetailViewController.swift */,
 				02D7FDB52726E384004D56C3 /* PhotoDetailViewController.swift */,
 			);
-			path = ViewController;
+			path = PageViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -34,6 +34,7 @@ class MainViewController: UITableViewController {
                 return
             }
         }
+        
     }
     
     private func fetchUser() {
