@@ -22,7 +22,7 @@ This app using Xcode 13, iOS 15 Target Deployment, and Swift 5 Versions.
 ## API
 This app data fetched from <a href=https://jsonplaceholder.typicode.com/>here</a><br>
 with:<br>
-<a href=hhttps://jsonplaceholder.typicode.com/posts>/post</a> -> 100 posts data that attached to spesific user<br>
+<a href=https://jsonplaceholder.typicode.com/posts>/posts</a> -> 100 posts data that attached to spesific user<br>
 <a href=https://jsonplaceholder.typicode.com/comments>/comments</a> -> 500 comments data that attahed to spesific post<br>
 <a href=https://jsonplaceholder.typicode.com/albums>/albums</a> -> 100 albums data that attached to spesific user<br>
 <a href=https://jsonplaceholder.typicode.com/photos>/photos</a> -> Showing 5000 photos data that attached to spesific album<br>
