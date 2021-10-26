@@ -2,7 +2,7 @@
 //  PerformSegueCell.swift
 //  InstaPost
 //
-//  Created by Gilbert Nicholas on 25/10/21.
+//  Created by Gilbert Nicholas on 24/10/21.
 //
 
 import Foundation
