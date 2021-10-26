@@ -19,9 +19,9 @@ This app using Xcode 13, iOS 15 Target Deployment, and Swift 5 Versions.
 ## AppStore Testflight! (Coming soon)
 <Being reviewed by Apple at the moment>
 
-## API
-This app data fetched from <a href=https://jsonplaceholder.typicode.com/>here</a><br>
-with:<br>
+## REST API
+This app data fetched from Json Placeholder <a href=https://jsonplaceholder.typicode.com/>here</a><br>
+where:<br>
 <a href=https://jsonplaceholder.typicode.com/posts>/posts</a> -> 100 posts data that attached to spesific user<br>
 <a href=https://jsonplaceholder.typicode.com/comments>/comments</a> -> 500 comments data that attahed to spesific post<br>
 <a href=https://jsonplaceholder.typicode.com/albums>/albums</a> -> 100 albums data that attached to spesific user<br>
@@ -29,9 +29,9 @@ with:<br>
 <a href=https://jsonplaceholder.typicode.com/users>/users</a> -> Showing 10 users data<br>
 
 ## Technologies
-▸ Swift Programming Language<br>
-▸ UIKit Architecture<br>
-▸ MVVM architecture<br>
-▸ Cloud Firestore<br>
+▸ Swift 5 Programming Language<br>
+▸ UIKit Framework<br>
+▸ MVC architecture<br>
+▸ REST API<br>
 ▸ Xcode<br>
 
